@@ -1,0 +1,15 @@
+android_sdk_config:
+  add_gradle_deps: true
+
+output:
+  bindings_type: dart_only
+  dart:
+    path: lib/my_utils.dart
+    structure: single_file
+
+source_path:
+  - 'android/app/src/main/java'
+classes:
+  - 'com.example.flutter_extend_mz_demo_jinigen.MyUtils'
+  - 'android.os.Build' # from gradle's compile classpath
+  - 'java.util.HashMap' # from gradle's compile classpath
