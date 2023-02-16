@@ -33,13 +33,11 @@ public abstract class MyUtils {
 
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    // User clicked OK button
                     Toast.makeText(mainActivity, "Clicked", Toast.LENGTH_SHORT).show();
                 }
             });
             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    // User cancelled the dialog
                 }
             });
             AlertDialog dialog = builder.create();
@@ -50,12 +48,10 @@ public abstract class MyUtils {
     }
 
     public  static  void  openCamera(Activity mainActivity){
-//        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-//        mainActivity.startActivity(intent);
+
         final int CAMERA_PIC_REQUEST = 1337;
             mainActivity.runOnUiThread(()->{
-//                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-//                mainActivity.startActivity(intent);
+
                 Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                 mainActivity.startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
             });

@@ -9,21 +9,18 @@ import 'package:flutter_extend_mz_demo_jinigen/my_utils.dart';
 import 'package:jni/jni.dart';
 
 
-// The hierarchy created in generated code will mirror the java package
-// structure.
+
 
 JObject activity = JObject.fromRef(Jni.getCurrentActivity());
-//
+
 final hashmap = HashMap.ctor2(JString.type, JString.type);
-//
+
 extension IntX on int {
   JString toJString() {
     return toString().toJString();
   }
 }
-//
-// /// Display device model number and the number of times this was called
-// /// as Toast.
+
 void showToast() {
   final toastCount =
   hashmap.getOrDefault("toastCount".toJString(), 0.toJString());
@@ -55,11 +52,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Forward Extend MZ',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Forward Extend Mozambique'),
     );
   }
 }
