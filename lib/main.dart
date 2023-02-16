@@ -41,6 +41,10 @@ void sm(){
 void showAlerDialog(){
   MyUtils.showAlertDialog(activity);
 }
+
+void openCamera(){
+  MyUtils.openCamera(activity);
+}
 void main() {
   runApp(const MyApp());
 }
@@ -79,8 +83,18 @@ class MyHomePage extends StatelessWidget {
               child: const Text('Show Device Model'),
               onPressed: () {
               showToast();
-                sm();
-              showAlerDialog();
+              },
+            ),
+            ElevatedButton(
+              child: const Text('Show Alert Dialog'),
+              onPressed: () {
+                showAlerDialog();
+              },
+            ),
+            ElevatedButton(
+              child: const Text('Open Camera'),
+              onPressed: () {
+                openCamera();
               },
             ),
           ],

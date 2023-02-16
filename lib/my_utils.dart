@@ -70,6 +70,14 @@ class MyUtils extends jni.JObject {
   static void showAlertDialog(jni.JObject mainActivity) =>
       jniAccessors.callStaticMethodWithArgs(_classRef, _id_showAlertDialog,
           jni.JniCallType.voidType, [mainActivity.reference]).check();
+
+  static final _id_openCamera = jniAccessors.getStaticMethodIDOf(
+      _classRef, "openCamera", "(Landroid/app/Activity;)V");
+
+  /// from: static public void openCamera(android.app.Activity mainActivity)
+  static void openCamera(jni.JObject mainActivity) =>
+      jniAccessors.callStaticMethodWithArgs(_classRef, _id_openCamera,
+          jni.JniCallType.voidType, [mainActivity.reference]).check();
 }
 
 class $MyUtilsType extends jni.JObjType<MyUtils> {

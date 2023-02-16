@@ -3,14 +3,15 @@ package com.example.flutter_extend_mz_demo_jinigen;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.widget.Toast;
 import androidx.annotation.Keep;
 
 
 @Keep
 public abstract class MyUtils {
-    private MyUtils() {}
 
+    private MyUtils() {}
     public static void showToast(Activity mainActivity, CharSequence text, int duration) {
         mainActivity.runOnUiThread(() -> Toast.makeText(mainActivity, text, duration).show());
     }
@@ -45,6 +46,19 @@ public abstract class MyUtils {
 
             dialog.show();
         });
+
+    }
+
+    public  static  void  openCamera(Activity mainActivity){
+//        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+//        mainActivity.startActivity(intent);
+        final int CAMERA_PIC_REQUEST = 1337;
+            mainActivity.runOnUiThread(()->{
+//                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+//                mainActivity.startActivity(intent);
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                mainActivity.startActivityForResult(cameraIntent, CAMERA_PIC_REQUEST);
+            });
 
     }
 }
